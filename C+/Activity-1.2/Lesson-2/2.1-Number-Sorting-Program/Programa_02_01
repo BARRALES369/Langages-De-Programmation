@@ -25,11 +25,12 @@ int main(int argc, char* argv[])
         float n;
         for (i=0; i<10; i++)
                 for (j=i+1; j<10; j++)
-                {
-                        n=numero[i];
-                        numero[i]=numero[j];
-                        numero[j]=n;
-                }
+                        if (numero[i]>numero[j])
+                        {
+                                n = numero[i];
+                                numero[i] = numero[j];
+                                numero[j] = n;
+                        }
 
         printf("\nLos números ordenados son:\n");
         for (i=0; i<10; i++)
