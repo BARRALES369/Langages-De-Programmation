@@ -1,0 +1,47 @@
+#include <vcl.h>
+#pragma hdrstop
+
+#include <stdio.h>
+#include <conio.h>
+
+//------------------------------------------------------------------------
+
+#pragma argused
+int main(int argc, char* argv[])
+{
+  char caracter;
+  do
+  {
+    clrscr();
+    printf("Programa 2.2\n");
+    printf("Este programa realiza la ordenación de 10 números en forma ascendente.\n");
+    printf("La acción se repite hasta que el usuario ya no lo desee\n\n");
+    printf("Introduce los números\n");
+    int i;
+    float numero[10];
+    for (i=0; i<10; i++)
+    {
+      scanf("%f", &numero[i]);
+    }
+    
+    //*** Ordenación de números
+    int j;
+    float n;
+    for (i=0; i<10; i++)
+      for (j=i+1; j<10; j++)
+        if (numero[i] > numero [j])
+        {
+          n = numero[i];
+          numero[i] = numero[j];
+          numero[j] = n;
+        }
+        
+      printf("\nLos números ordenados son:\n");
+      for (i=0; i<10; i++)
+        printf("%f, ", numero[i]);
+        
+      printf("\n\n¿Deseas continuar (S/N)?: ");
+      caracter = UpCase(getch());
+    } while (caracter != 'N');
+    return 0;
+        
