@@ -1,0 +1,101 @@
+#include <vcl.h>
+#include <stdio.h>
+#include <conio.h>
+
+// Diccionario español-inglés
+char* diccionario_espanol_ingles[] =
+{
+  "el", "the",
+  "la", "the",
+  "mesa", "table",
+  "silla", "chair",
+  "caja", "box",
+  "piso", "floor",
+  "cama", "bed",
+  "libro", "book",
+  "cuadreno", "notebook",
+  "lapiz", "pencil",
+  "pluma", "pen",
+  "es", "is",
+  "blanco", "white",
+  "blanca", "white",
+  "negro", "black",
+  "negra", "black",
+  NULL,
+};
+
+#pragma argused
+int main(int argc, char* argv[])
+{
+  printf ("Programa 3.4. Traductor de palabras\n");
+  printf ("Descripción:\n");
+  printf ("Este programa traduce una oración en español al inglés. Las palabras");
+  printf (" deben estar separadas al menos por un guión medio.");
+  
+  // Solicita al usuario la introducción de cadena
+  printf("\n\nIntroduce la oración: ");
+  char cadena_origen[80];
+  scanf("%s", cadena_origen);
+  
+  // Convierte la cadena a minúsculas
+  int i = 0;
+  while (cadena_origen[i])
+  {
+    cadena_origen[i] = tolower(cadena_origen[i]);
+    i++;
+  }
+  
+  // Define cadena en donde se guardará la traducción
+  char cadena_destino[80];
+  
+  // La inicializa como una cadena vacía
+  strcpy(cadena_destino, "");
+  
+  // Define una variable booleana
+  bool palabra_encontrada;
+  bool traducción_completa = true;
+  int j;
+  i = 0;
+  while (cadena_origen[i] != 0)
+  {
+    // Ubica palabra en la cadena
+    char* palabra = &cadena_origen[i];
+    
+    // Encuentra primera ocurrencia de '-'
+    while ((cadena_origen[i] !=0) && (cadena_origen[i] != '-')) i++;
+    
+    // Si hay un separador, encontró una palabra
+    if (cadena_origen[i] == '-')
+    {
+      // Agrega carácter nulo
+      cadena_origen[i] = 0;
+      i++;
+    }
+    
+    // Busca palabra en el diccionario
+    j = 0;
+    palabra_encontrada = false;
+    while (diccionario:espanol_ingles[j])
+    {
+      if (strcmp (palabra, diccionario_espanol_ingles[j]) == 0)
+      {
+        strcat (cadena_destino, diccionario_espanol_ingles[j+1]);
+        strcat (cadena_destino, " ");
+        palabra_encontrada = true;
+        break;
+      }
+      j = j + 2;
+    }
+    
+    // Verifica si la traducción está completa
+    traduccion_completa = traduccion_completa & palabra_encontrada;
+    
+    // Encuentra el siguietne carádcter diferente a '-'
+    while(cadena_origen[i] == '-') i++;
+  }
+  
+  if (traduccion_completa) printf("\n\nLa traducción es: %s", cadena_destino);
+                      else printf("\n\nNo se tradujeron todas las palabras");
+  getch();
+  return 0;
+}
