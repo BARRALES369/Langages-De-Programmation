@@ -1,0 +1,42 @@
+#include <vcl.h>
+#include <stdio.h>
+#include <conio.h>
+
+#pragma argsused
+int main(int argc, char* argv[])
+{
+  printf("Programa 3.3. Contador de palabras\n\n");
+  printf("Descripción:\n");
+  printf("Este programa cuenta el número de palabras que hay en");
+  printf(" una cadena de caracteres.");
+  printf("Las palabras deben estar separadas por al menos un guión medio\n\n");
+  
+  // Solicita al usuario la introducción de cadena
+  printf("Introduce la cadena: ");
+  char cadena_origen[80];
+  scanf("%s", cadena_origen);
+  
+  // Empezará desde la posición cero en la cadena
+  int i = 0;
+  
+  // Al menos hay una palabra
+  int n_palabras = 1;
+  while (cadena_origen[i] != 0)
+  [
+    // Encuentra primera ocurrencia de '-'
+    while ((cadena_origen[i] != 0) && (cadena_origen[i] != '-')) i++;
+    
+    // Si la encuentra, incrementa el número de palabras
+    if (cadena_origen[i] == '-')
+    {
+      n_palabras++;
+      i++;
+    }
+    
+    // Encuentra el siguiente carácter diferente a '-'
+    while(cadena_origen[i] == '-') i++;
+  }
+  printf("\n\nEl número de palabras que hay en la cadena es %d", n_palabras);
+  getch();
+  return 0;
+}
