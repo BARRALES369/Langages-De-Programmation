@@ -13,22 +13,23 @@ typedef struct
   char nombre[80];
   float calificacion;
   float edad;
+  float suma;
 } INFO_ALUMNO;
 
 int main(int argc, char* argv[])
 {
-  bool salida = false;
-  while (!salida)
+  char caracter;
+  do
   {
     clrscr();
     printf("Programa 2.3\n");
-    printf("Este programa determina la calificación menor de un grupo de 5 alumnos.\n");
+    printf("Este programa determina la calificación menor de un grupo de 3 alumnos.\n");
     printf("La acción se repite mientras el usuario lo desee\n\n");
 
-    INFO_ALUMNO alumno[5];
+    INFO_ALUMNO alumno[3];
     printf("Introduce los datos de los alumnos\n");
     int i;
-    for (i=0; i<5; i++)
+    for (i=0; i<3; i++)
     {
         printf("\nAlumno %d\n", i+1);
         printf("Nombre: ");
@@ -41,8 +42,20 @@ int main(int argc, char* argv[])
 
     int j;
     INFO_ALUMNO temp;
-    for (i=0; i<5; i++)
-      for(j=i+1; j<5; j++)
+
+    for (i=0; i<3; i++)
+      for(j=i+1; j<3; j++)
+        if (alumno[i].calificacion < alumno[j].calificacion)
+        {
+          temp = alumno[i];
+          alumno[i] = alumno[j];
+          alumno[j] = temp;
+        }
+
+    printf("\nEl alumno que tiene la mayor calificación es %s de %.0f anios con %.1f\n\n", alumno[0].nombre, alumno[0].edad, alumno[0].calificacion);
+
+    for (i=0; i<3; i++)
+      for(j=i+1; j<3; j++)
         if (alumno[i].calificacion > alumno[j].calificacion)
         {
           temp = alumno[i];
@@ -50,18 +63,18 @@ int main(int argc, char* argv[])
           alumno[j] = temp;
         }
 
-        if (alumno[i].calificacion < alumno[j].calificacion)
+    float suma = 0;
+    for (i=0; i<3; i++)
         {
-          temp = alumno[i];
-          alumno[i] = alumno[j];
-          alumno[j] = temp;
+          suma = suma + alumno[i].calificacion;
+          suma = suma/3;
         }
-    printf("\nEl alumno que tiene la menor calificación es %s de %.0f años con %.1f\n\n", alumno[0].nombre, alumno[0].edad, alumno[0].calificacion);
-    printf("\nEl alumno que tiene la mayor calificación es %s con %.1f\n\n", alumno[j].nombre, alumno[j].calificacion, alumno[j].edad);
+
+    printf("\nEl alumno que tiene la menor calificación es %s de %.0f anios con %.1f\n\n", alumno[0].nombre, alumno[0].edad, alumno[0].calificacion);
+    printf("\nEl promedio de las calificaciones de todos los alumnos es %.1f\n\n", alumno[0].suma);
     printf("¿Desea repetir la captura (S/N)? ");
-    char caracter = UpCase(getche());
-    if (caracter== 'N') salida = true;
-  }
+    caracter = UpCase(getche());
+  } while (caracter !='N');
   return 0;
 }
 
