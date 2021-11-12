@@ -23,13 +23,13 @@ int main(int argc, char* argv[])
   {
     clrscr();
     printf("Programa 2.3\n");
-    printf("Este programa determina la calificación menor de un grupo de 3 alumnos.\n");
+    printf("Este programa determina la calificación menor de un grupo de 5 alumnos.\n");
     printf("La acción se repite mientras el usuario lo desee\n\n");
 
-    INFO_ALUMNO alumno[3];
+    INFO_ALUMNO alumno[5];
     printf("Introduce los datos de los alumnos\n");
     int i;
-    for (i=0; i<3; i++)
+    for (i=0; i<5; i++)
     {
         printf("\nAlumno %d\n", i+1);
         printf("Nombre: ");
@@ -43,8 +43,8 @@ int main(int argc, char* argv[])
     int j;
     INFO_ALUMNO temp;
 
-    for (i=0; i<3; i++)
-      for(j=i+1; j<3; j++)
+    for (i=0; i<5; i++)
+      for(j=i+1; j<5; j++)
         if (alumno[i].calificacion < alumno[j].calificacion)
         {
           temp = alumno[i];
@@ -54,8 +54,8 @@ int main(int argc, char* argv[])
 
     printf("\nEl alumno que tiene la mayor calificación es %s de %.0f anios con %.1f\n\n", alumno[0].nombre, alumno[0].edad, alumno[0].calificacion);
 
-    for (i=0; i<3; i++)
-      for(j=i+1; j<3; j++)
+    for (i=0; i<5; i++)
+      for(j=i+1; j<5; j++)
         if (alumno[i].calificacion > alumno[j].calificacion)
         {
           temp = alumno[i];
@@ -64,10 +64,10 @@ int main(int argc, char* argv[])
         }
 
     float suma = 0;
-    for (i=0; i<3; i++)
+    for (i=0; i<5; i++)
         {
           suma = suma + alumno[i].calificacion;
-          suma = suma/3;
+          suma = suma/5.0;
         }
 
     printf("\nEl alumno que tiene la menor calificación es %s de %.0f anios con %.1f\n\n", alumno[0].nombre, alumno[0].edad, alumno[0].calificacion);
