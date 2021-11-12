@@ -5,13 +5,13 @@
 #pragma argused
 int main(int argc, char* argv[])
 {
-  print("Programa 3.1. Conversión de una cadena a minúsculas y mayúsculas\n\");
-  print("Descripción:\n");
+  printf("Programa 3.1. Conversión de una cadena a minúsculas y mayúsculas\n\n");
+  printf("Descripción:\n");
   printf("Este programa solicita al usuario la introducción de una cadena de caracteres\n");
   printf("La cadena debe introducirse sin espacios en blanco\n");
   printf("Al final, imprime la cadena en mayúsculas y en minúsculas\n\n");
   
-  char cadena_origen[80],cadena_mayusculas[80];
+  char cadena_origen[80],cadena_minusculas[80],cadena_mayusculas[80];
   
   //Solicita al usuario la introcción de la cadena
   printf("Escribe la cadena a convertir: ");
@@ -37,3 +37,4 @@ int main(int argc, char* argv[])
   getch();
   return 0;
 }
+
