@@ -12,8 +12,7 @@ typedef struct
 {
   char nombre[80];
   float calificacion;
-  float edad;
-  float suma;
+  int edad;
 } INFO_ALUMNO;
 
 int main(int argc, char* argv[])
@@ -37,7 +36,7 @@ int main(int argc, char* argv[])
         printf("Calificación: ");
         scanf("%f",&alumno[i].calificacion);
         printf("Edad: ");
-        scanf("%f",&alumno[i].edad);
+        scanf("%d",&alumno[i].edad);
     }
 
     int j;
@@ -52,10 +51,8 @@ int main(int argc, char* argv[])
           alumno[j] = temp;
         }
 
-    printf("\nEl alumno que tiene la mayor calificación es %s de %.0f anios con %.1f\n\n", alumno[0].nombre, alumno[0].edad, alumno[0].calificacion);
+    printf("\nEl alumno que tiene la mayor calificación es %s de %d anios con %.1f\n\n", alumno[0].nombre, alumno[0].edad, alumno[0].calificacion);
 
-    for (i=0; i<5; i++)
-      for(j=i+1; j<5; j++)
         if (alumno[i].calificacion > alumno[j].calificacion)
         {
           temp = alumno[i];
@@ -63,15 +60,12 @@ int main(int argc, char* argv[])
           alumno[j] = temp;
         }
 
-    float suma = 0;
-    for (i=0; i<5; i++)
-        {
-          suma = suma + alumno[i].calificacion;
-          suma = suma/5.0;
-        }
+    // Promedio
+    float promedio = 0;
+    for (i=0; i<5; i++) promedio+=alumno[i].calificacion;
 
-    printf("\nEl alumno que tiene la menor calificación es %s de %.0f anios con %.1f\n\n", alumno[0].nombre, alumno[0].edad, alumno[0].calificacion);
-    printf("\nEl promedio de las calificaciones de todos los alumnos es %.1f\n\n", alumno[0].suma);
+    printf("\nEl alumno que tiene la menor calificación es %s de %d anios con %.1f\n\n", alumno[0].nombre, alumno[0].edad, alumno[0].calificacion);
+    printf("\nEl promedio de las calificaciones de todos los alumnos es %.1f\n\n", promedio/5.0);
     printf("¿Desea repetir la captura (S/N)? ");
     caracter = UpCase(getche());
   } while (caracter !='N');
