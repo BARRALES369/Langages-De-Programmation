@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
   
   // Define una variable booleana
   bool palabra_encontrada;
-  bool traducción_completa = true;
+  bool traduccion_completa = true;
   int j;
   i = 0;
   while (cadena_origen[i] != 0)
@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
     // Busca palabra en el diccionario
     j = 0;
     palabra_encontrada = false;
-    while (diccionario:espanol_ingles[j])
+    while (diccionario_espanol_ingles[j])
     {
       if (strcmp (palabra, diccionario_espanol_ingles[j]) == 0)
       {
