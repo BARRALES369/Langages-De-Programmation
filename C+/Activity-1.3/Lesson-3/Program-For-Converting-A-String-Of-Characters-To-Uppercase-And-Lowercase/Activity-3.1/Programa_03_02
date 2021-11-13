@@ -1,95 +1,93 @@
 #include <vcl.h>
-#include <stidio.h>
+#include <stdio.h>
 #include <conio.h>
 
 #pragma argused
 int main(int argc, char* argv[])
+
 {
     char opcion;
     do
     {
-      clrscr();
-      printf("Programa 3.2. Intérprete de operaciones artiméticas fundamentales en");
-      printf(" notación estándar\n\n");
-      printf("Descripción:\n");
-      printf("Este programa realiza una operación aritmética entre dos números expresados");
-      printf(" en notación estándar en una cadena de caracteres.\n\n");
-      printf("Ejemplo: 45+56");
-    
-      // Solicita al usuario la introducción de la expresión
-      printf("\n\nIntroduce la expresión: ");
-      char cadena_origen[80];
-      scanf("%s", cadena_origen);
-    
-      // Define ubicación del primer parámetro
-      char* numl = &cadena_origen[0];
-    
-      // Aquí guardará la ubicación del segundo parámetro
-      char* num2;
-    
-      // Aún no se especifica la operación
-      char operacion = 0;
-    
-      // Explorará cada uno de los caracteres en la cadena
-      // Empezará desde la posición cero en la cadena
-      int i = 0;
-      while (cadena_origen[i] !=0)
-      {
-        switch(cadena_origen[i] !=0)
+        clrscr();
+        printf("Programa 3.2. Intérprete de operaciones artiméticas fundamentales en");
+        printf(" notación estándar\n\n");
+        printf("Descripción:\n");
+        printf("Este programa realiza una operación aritmética entre dos números expresados");
+        printf(" en notación estándar en una cadena de caracteres.\n\n");
+        printf("Ejemplo: 45+56");
+
+        // Solicita al usuario la introducción de la expresión
+        printf("\n\nIntroduce la expresión: ");
+        char cadena_origen[80];
+        scanf("%s", cadena_origen);
+
+        // Define ubicación del primer parámetro
+        char* num1 = &cadena_origen[0];
+
+        // Aquí guardará la ubicación del segundo parámetro
+        char* num2;
+
+        // Aún no se especifica la operación
+        char operacion = 0;
+
+        // Explorará cada uno de los caracteres en la cadena
+        // Empezará desde la posición cero en la cadena
+        int i = 0;
+        while (cadena_origen[i] !=0)
         {
-          case '+':
-          case '-':
-          case '*':
-          case '/':
-                // Si el carácter es '+','-','*' o '/', hay operación a realizar
+            switch(cadena_origen[i])
+            {   
+                case '+':
+                case '-':
+                case '*':
+                case '/':
+                     // Si el carácter es '+','-','*' o '/', hay operación a realizar
                 operacion = cadena_origen[i];
-              
-                // Especifica fin de parámetro
+
+                // Especifica fin de parámetro 1
                 cadena_origen[i] = 0;
-              
+
                 // Obtiene ubicación del segundo parámetro
                 num2 = &cadena_origen[i+1];
                 break;
-      }
-      i++;
-    }
-    if (operacion == 0)
-    {
-      printf("ERROR. No se especificó la operación a realizar"=;
-      getch();
-      return 0;
-    }
-  
-    // Convierte parámetros cadena a flotantes
-    float n1 = atof(num1);
-    float n2 = atof(num2);
-    float resultado;
-  
-    // Realiza operación
-    switch(operacion)
-    {
-      case '+':
-            resultado = n1 + n2;
-            break;
-          
-      case '+':
-            resultado = n1 - n2;
-            break;     
-          
-      case '+':
-            resultado = n1 * n2;
-            break;
-            
-      case '+':
-            resultado = n1 / n2;
-            break;
-    }
-    printf("\nEl resultado es %.2f", resultado);
-    printf("\n\n¿Deseas repetir (S/N)? ");
-    opcion = UpCase(getche());
-  } while(opcion != 'N');
-  return 0
-}      
-    
-    
-    
+            }
+            i++;
+        }
+        if (operacion == 0)
+        {
+            printf("ERROR. No se especificó la operación a realizar");
+            getch();
+            return 0;
+        }
+
+        // Convierte parámetros cadena a flotantes
+        float n1 = atof(num1);
+        float n2 = atof(num2);
+        float resultado;
+
+        // Realiza operación
+        switch(operacion)
+        {
+            case '+':
+                    resultado = n1 + n2;
+                    break;
+
+            case '-':
+                    resultado = n1 - n2;
+                    break;
+
+            case '*':
+                    resultado = n1 * n2;
+                    break;
+
+            case '/':
+                    resultado = n1 / n2;
+                    break;
+        }
+        printf("\nEl resultado es %.2f", resultado);
+        printf("\n\n¿Deseas repetir (S/N)? ");
+        opcion = UpCase(getche());
+    } while(opcion != 'N');
+    return 0;
+}
