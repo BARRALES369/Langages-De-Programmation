@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
   // Al menos hay una palabra
   int n_palabras = 1;
   while (cadena_origen[i] != 0)
-  [
+  {
     // Encuentra primera ocurrencia de '-'
     while ((cadena_origen[i] != 0) && (cadena_origen[i] != '-')) i++;
     
