@@ -126,7 +126,7 @@ int main(int argc, char* argv[])
       printf ("\n\nElija con un número a cual idioma desea traducir\n");
       printf ("\n\n1.- Ingles\n2.- Aleman\n3.- Nahuatl\n\n");
 
-      char idioma;
+      int idioma;
 
       switch(idioma)
       {
@@ -134,7 +134,9 @@ int main(int argc, char* argv[])
         case '2':
         case '3':
 
-                idioma = cadena_origen[i];
+        scanf("%d", idioma);
+
+                idioma = j;
                 break;
       }
 
