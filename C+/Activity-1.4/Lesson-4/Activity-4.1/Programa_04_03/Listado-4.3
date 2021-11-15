@@ -1,0 +1,26 @@
+#include <vcl.h>
+#include <stdio.h>
+#include <conio.h>
+#include <Operaciones_con_cadenas.h>
+
+#pragma argsused
+int main(int argc, char* argv[])
+{
+  printf("Programa 4.3. Contador de palabras\n\n");
+  printf("Descripción:\n");
+  printf("Este programa cuenta el número de palabras que hay en");
+  printf(" una cadena de caracteres.");
+  printf("Las palabras deben estar separadas por al menos un guión medio\n\n");
+  printf("*** ESTE PROGRAMA UTILIZA UNA FUNCIÓN DE BIBLIOTECA ***\n\n");
+  
+  // Solicita al usuario la introducción de la cadena
+  printf("Introduce la cadena: ");
+  char cadena_origen[80];
+  scanf("%s", cadena_origen);
+  
+  int n_palabras = Contar_palabras(cadena_origen);
+  
+  printf("\n\nEl número de palabras que hay en la cadena es %d", n_palabras);
+  getch();
+  return 0;
+}
