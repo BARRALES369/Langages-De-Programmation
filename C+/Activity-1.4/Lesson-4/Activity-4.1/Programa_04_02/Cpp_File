@@ -1,0 +1,14 @@
+#include <vcl.h>
+#include <Operaciones_con_cadenas.h>
+
+void   Convertir_a_minus_mayus(char*   cadena_destino,   char*   cadena_origen, CONVERSION_MIN_MAY opcion)
+{
+  while (*cadena_origen)
+  {
+    if (opcion == CMIN) *cadena_destino = tolower(cadena_origen);
+                   else *cadena_destino = toupper(*cadena_origen);
+    cadena_destion++;
+    cadena_origen++;
+  }
+  *cadena_destion = 0;
+}
