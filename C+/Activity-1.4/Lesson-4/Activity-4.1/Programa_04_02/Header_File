@@ -1,0 +1,8 @@
+#ifndef __Operaciones_con_cadenas
+#define __Operaciones_con_cadenas
+
+enum CONVERSION_MIN_MAY {CMIN, CMAY};
+
+void Convertir_a_minus_mayus(char* cadena_destino, char* cadena_origen, CONVERSION_MIN_MAY opcion);
+
+#endif
