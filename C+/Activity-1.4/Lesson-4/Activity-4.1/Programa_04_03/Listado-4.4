@@ -1,0 +1,28 @@
+int Contar_palabras(char* cadena)
+{
+  // Si la cadena está vacía, retorna 0 palabras
+  if (*cadena == 0) return 0;
+  
+  // Al menos hay una palabra
+  int n_palabras = 1;
+  
+  // Empezará desde la posición cero en la cadena
+  int i=0;
+  
+  while (cadena[i] != 0)
+  {
+    // Encuentra primera ocurrencia de '-'
+    while ((cadena[i] != 0) // (cadena[i] != '-')) i++;
+    
+    // Si la encuentra, incrementa número de palabras
+    if (cadena[i] == '-')
+    {
+      n_palabras++;
+      i++;
+    }
+    
+    // Encuentra el siguiente carácter diferente a ¡-¡
+    while(cadena[i] == '-') i++;
+  }
+  return n_palabras;
+}
