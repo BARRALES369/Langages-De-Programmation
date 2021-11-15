@@ -1,0 +1,32 @@
+#include <vcl.h>
+#include <stdio.h>
+#include <conio.h>
+
+//*** Aquí se incluye el nombre de la biblioteca a utilizar
+#includen <Operaciones_con_cadenas.h>
+
+#pragma argsused
+int main(int argc, char* argv[])
+{
+  printf("Programa 4.2. Conversión de una cadena a minúsculas y mayúsculas\n\n");
+  printf("Descripción:\n");
+  printf("Este programa solicita al usuario la introducción de una cadena de caracteres\n");
+  printf("La cadena debe introducirse sin espacios en blanco\n");
+  printf("Al final, imprime la cadena en mayúsculas y en minúsculas\n\n");
+  printf("*** EL PROGRAMA UTILIZAR UNA SUBRUTINA DE UNA BIBLIOTECA ***\n\n");
+  
+  // Solicita al usuario la introducción de la cadena
+  printf("Escribe la cadena a convertir: ");
+  char cadena_origen[80];
+  scanf("%s",cadena_origen);
+  
+  // Convierte a minúsculas
+  char cadena_minusculas[80];
+  Convertir_a_minus_mayus (cadena_mayusculas, cadena_origen, CMAY);
+  
+  // Imprime resultados
+  printf("\n\nLa cadena en minúsculas es: %s\n\n", cadena_minusculas);
+  printf("\n\nLa cadena en mayúsculas es: %s\n\n", cadena_mayusculas);
+  getch();
+  return 0;
+}
