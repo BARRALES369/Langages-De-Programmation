@@ -1,0 +1,3 @@
+void Sumar_vectores (float* vector_resultante, float* vector_1, float* vector_2);
+void Restar_vectores(float* vector_resultante, float* vector_1, float* vector_2);
+float Producto_escalar(float* vector_1, float* vector_2);
