@@ -43,7 +43,8 @@ int main(int argc, char* argv[])
     INFO_ALUMNO temp;
 
     // Menor a mayor
-     for(j=i+1; j<10; j++)
+    for (i=0; i<10;i++)
+      for(j=i+1; j<10; j++)
         if (alumno[i].calificacion > alumno[j].calificacion)
         {
           temp = alumno[i];
@@ -55,7 +56,7 @@ int main(int argc, char* argv[])
     float promedio = 0;
     for (i=0; i<10; i++) promedio+=alumno[i].calificacion;
 
-    printf("\nEl alumno que tiene la mayor calificación es %s de %d anios con %.1f\n\n", alumno[0].nombre, alumno[0].edad, alumno[0].calificacion);
+    printf("\nEl alumno que tiene la mayor calificación es %s de %d anios con %.1f\n\n", alumno[9].nombre, alumno[9].edad, alumno[9].calificacion);
     printf("\nEl alumno que tiene la menor calificación es %s de %d anios con %.1f\n\n", alumno[0].nombre, alumno[0].edad, alumno[0].calificacion);
 
     printf("\nEl promedio de las calificaciones de todos los alumnos es %.1f\n\n", promedio/10);
@@ -64,6 +65,7 @@ int main(int argc, char* argv[])
   } while (caracter !='N');
   return 0;
 }
+
 
 
 
