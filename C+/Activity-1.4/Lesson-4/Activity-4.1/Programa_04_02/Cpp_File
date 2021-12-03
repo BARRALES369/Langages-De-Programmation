@@ -5,10 +5,10 @@ void   Convertir_a_minus_mayus(char*   cadena_destino,   char*   cadena_origen, 
 {
   while (*cadena_origen)
   {
-    if (opcion == CMIN) *cadena_destino = tolower(cadena_origen);
+    if (opcion == CMIN) *cadena_destino = tolower(*cadena_origen);
                    else *cadena_destino = toupper(*cadena_origen);
-    cadena_destion++;
+    cadena_destino++;
     cadena_origen++;
   }
-  *cadena_destion = 0;
+  *cadena_destino = 0;
 }
