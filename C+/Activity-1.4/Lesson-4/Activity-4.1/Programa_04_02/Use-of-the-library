@@ -3,7 +3,7 @@
 #include <conio.h>
 
 //*** Aquí se incluye el nombre de la biblioteca a utilizar
-#includen <Operaciones_con_cadenas.h>
+#include <Operaciones_con_cadenas.h>
 
 #pragma argsused
 int main(int argc, char* argv[])
@@ -22,8 +22,12 @@ int main(int argc, char* argv[])
   
   // Convierte a minúsculas
   char cadena_minusculas[80];
+  Convertir_a_minus_mayus (cadena_minusculas, cadena_origen, CMIN);
+
+  //Convierte a mayúsculas
+  char cadena_mayusculas[80];
   Convertir_a_minus_mayus (cadena_mayusculas, cadena_origen, CMAY);
-  
+
   // Imprime resultados
   printf("\n\nLa cadena en minúsculas es: %s\n\n", cadena_minusculas);
   printf("\n\nLa cadena en mayúsculas es: %s\n\n", cadena_mayusculas);
